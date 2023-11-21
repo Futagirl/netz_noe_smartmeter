@@ -41,7 +41,7 @@ def pull_data(day: datetime) -> dict:
 
 
 def write_usage(day: datetime, usage: dict):
-    with open(f"./usage_files/usage_{yesterday}.json", "w") as usage_file:
+    with open(f"./outfiles/usage_files/usage_{yesterday}.json", "w") as usage_file:
         json.dump(usage, usage_file)
 
 
@@ -75,7 +75,7 @@ def parse_usage(timestamps: list[datetime], usage: dict):
 
 
 def load_usage_file(day):
-    with open(f"./usage_files/usage_2023-11-18.json", "r") as file:
+    with open(f"./outfiles/usage_files/usage_2023-11-18.json", "r") as file:
         return json.load(file)
 
 
@@ -106,7 +106,7 @@ def get_last_15_minute_mark(input_datetime):
     return last_15_minute_mark
 
 def write_daily_usage_data(usage_metrics: list[Usage_Metrics]):
-    with open("./daily.txt", "a") as daily_log:
+    with open("./outfiles/daily.txt", "a") as daily_log:
         usage_json = jsonpickle.encode(usage_metrics, unpicklable=False)
         daily_log.write(f"{usage_json}\n")
 

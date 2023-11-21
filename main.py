@@ -118,5 +118,4 @@ usage_metrics = parse_usage(generate_timestamps(yesterday), usage_data)
 # push_usage_values
 write_daily_usage_data(usage_metrics)
 
-print(a)
 # usage_json = get_usage_data()
